@@ -116,7 +116,21 @@ button,a{-webkit-tap-highlight-color:transparent}
 .training-gallery{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:16px;align-items:start}
 .training-row{display:grid;gap:16px}
 
-/* SLIDE 5 */
+/* SLIDE 5 · DIVISI ROHIS */
+.divisions-scroll{background:linear-gradient(135deg,#f5f8f5 0%,#edf5f2 55%,#e5f0ed 100%)}
+.divisions-layout{display:block;padding-top:34px;padding-bottom:42px}
+.divisions-layout .compact-heading{max-width:860px;margin:0 auto 24px}
+.divisions-layout .compact-heading h2{font-size:clamp(36px,4.5vw,62px)}
+.division-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:1000px;margin:0 auto}
+.division-card{display:grid;grid-template-columns:82px 1fr;gap:18px;padding:20px;border:1px solid rgba(13,56,80,.09);border-radius:20px;background:rgba(255,255,255,.82);box-shadow:0 14px 34px rgba(24,48,57,.06)}
+.division-card-wide{grid-column:1 / -1}
+.division-icon{width:72px;height:72px;display:grid;place-items:center;border-radius:18px;background:#e7f2ef;color:var(--teal-2);font-size:10px;font-weight:900;letter-spacing:.08em;text-align:center}
+.division-card h3{margin:1px 0 7px;color:var(--navy);font-size:20px;line-height:1.2}
+.division-card p{margin:0;color:#65777d;font-size:11.5px;line-height:1.65}
+.division-card ul{display:grid;grid-template-columns:1fr 1fr;gap:5px 22px;margin:12px 0 0;padding-left:17px;color:#65777d;font-size:10.5px;line-height:1.5}
+.division-card li::marker{color:var(--teal)}
+
+/* SLIDE 6 */
 .final-scroll{background:linear-gradient(135deg,#0a3648 0%,#0d4a59 58%,#19796f 100%)}
 .final-layout{grid-template-columns:minmax(380px,.95fr) minmax(0,1fr);color:#fff;gap:30px;align-items:stretch}
 .final-hero-photo{position:relative;min-height:480px;border:1px solid rgba(255,255,255,.12);border-radius:28px;overflow:hidden;background:#123644;cursor:zoom-in;box-shadow:0 26px 70px rgba(0,0,0,.18)}
@@ -203,6 +217,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   .activities-layout{gap:18px}.activity-cards{gap:11px}.activity-card{grid-template-columns:50px 1fr;gap:12px;padding:14px 13px;border-radius:16px}.activity-no{width:46px;height:46px;border-radius:14px;font-size:10px}.activity-card h3{font-size:16px;margin-bottom:5px}.activity-card p{font-size:10.5px;line-height:1.55}
   .compact-heading .slide-lead{margin-top:12px}.gallery-clean,.training-gallery{gap:12px}.gallery-secondary,.training-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;scrollbar-width:none}.gallery-secondary::-webkit-scrollbar,.training-row::-webkit-scrollbar{display:none}.gallery-secondary .photo-card,.training-row .photo-card{flex:0 0 78%;scroll-snap-align:start}.gallery-secondary .portrait-stage{aspect-ratio:4/5}.training-row .square-stage,.training-row .landscape-stage{aspect-ratio:4/3}
   .gallery-feature .landscape-stage,.training-feature .wide-stage{aspect-ratio:16/10;min-height:0}
+  .divisions-layout{padding-top:18px;padding-bottom:28px}.divisions-layout .compact-heading{margin-bottom:17px}.divisions-layout .compact-heading h2{font-size:clamp(34px,9.5vw,46px)}.division-grid{grid-template-columns:1fr;gap:10px}.division-card,.division-card-wide{grid-column:auto;grid-template-columns:58px 1fr;gap:12px;padding:14px;border-radius:16px}.division-icon{width:52px;height:52px;border-radius:14px;font-size:8px}.division-card h3{font-size:16px;margin-bottom:5px}.division-card p{font-size:10px;line-height:1.55}.division-card ul{grid-template-columns:1fr;gap:3px;margin-top:9px;font-size:9.5px}
   .final-layout{gap:24px}.final-hero-photo{min-height:245px;border-radius:20px}.final-photo-copy{left:16px;right:16px;bottom:14px}.final-photo-copy strong{font-size:18px}.final-photo-copy small{font-size:9px}.final-logo{width:72px;height:58px;margin-bottom:10px}.register-cta{width:100%;margin-top:22px}.final-copy-wrap small{font-size:9px}
   .story-nav{height:70px;padding:0 15px;grid-template-columns:43px 1fr 43px;gap:12px}.nav-arrow{width:42px;height:42px;font-size:18px}.progress-wrap{gap:10px}.counter{font-size:8px}.progress{gap:6px}.progress-item{height:4px}
   .form-header{height:72px;padding:0 15px;grid-template-columns:1fr auto}.form-brand{justify-self:end}.form-step{display:none}.back-btn{font-size:0}.back-btn span{font-size:18px}.form-page{width:calc(100% - 28px);padding:34px 0 34px;gap:26px}.form-intro h1{font-size:42px}.form-intro>p:not(.slide-kicker){font-size:12px;margin-top:16px}.form-info{margin-top:25px}.form-card{border-radius:17px}.form-title{padding:20px 18px 17px}.form-title h2{font-size:21px}.form-title>span{width:34px;height:34px}.fields{grid-template-columns:1fr;padding:20px 18px 7px}.field.full{grid-column:auto}.gender-options{grid-template-columns:1fr}.submit-area{padding:17px 18px 21px}.form-footer{width:calc(100% - 28px);flex-direction:column;gap:5px;padding-bottom:22px}
