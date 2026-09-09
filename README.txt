@@ -17,7 +17,7 @@ FILE:
 
 FITUR:
 - Welcome/logo intro lalu transisi masuk ke opening.
-- 6 slide opening dengan perpindahan otomatis sekitar 8 detik.
+- 5 slide opening dengan perpindahan otomatis sekitar 8 detik.
 - Tetap bisa next, previous, swipe di HP, dan lewati opening.
 - Foto Rohis dapat ditekan untuk melihat ukuran penuh melalui lightbox.
 - Slide terakhir menggunakan satu foto utama agar tata letak lebih bersih.
