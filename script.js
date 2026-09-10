@@ -10,6 +10,7 @@ const slides = [...document.querySelectorAll('.story-slide')];
 const progressItems = [...document.querySelectorAll('.progress-item')];
 const prevSlide = document.getElementById('prevSlide');
 const nextSlide = document.getElementById('nextSlide');
+const pauseSlide = document.getElementById('pauseSlide');
 const skipOpening = document.getElementById('skipOpening');
 const startRegistration = document.getElementById('startRegistration');
 const currentNumber = document.getElementById('currentNumber');
@@ -27,11 +28,13 @@ let current = 0;
 let touchStartX = 0;
 let touchStartY = 0;
 let autoSlideTimer = null;
+let slideshowPaused = false;
 const AUTO_SLIDE_DELAY = 8000;
 
 function pad(value){ return String(value).padStart(2,'0'); }
 
 function showOpening(){
+  setSlideshowPaused(false);
   openingScreen.classList.add('is-visible');
   openingScreen.setAttribute('aria-hidden','false');
   registrationScreen.classList.remove('is-visible');
@@ -56,6 +59,7 @@ function clearAutoSlide(){
 
 function restartAutoSlide(){
   clearAutoSlide();
+  if(slideshowPaused) return;
   if(!openingScreen.classList.contains('is-visible')) return;
   if(lightbox.classList.contains('is-open')) return;
   if(current >= slides.length - 1) return;
@@ -110,7 +114,22 @@ function returnToOpening(){
   restartAutoSlide();
 }
 
-nextSlide.addEventListener('click',() => current === slides.length - 1 ? openForm() : goTo(current + 1));
+function setSlideshowPaused(value){
+  slideshowPaused = Boolean(value);
+  body.classList.toggle('slideshow-paused', slideshowPaused);
+  if(pauseSlide){
+    pauseSlide.textContent = slideshowPaused ? '▶' : '⏸';
+    pauseSlide.setAttribute('aria-label', slideshowPaused ? 'Lanjutkan slideshow' : 'Jeda slideshow');
+    pauseSlide.setAttribute('aria-pressed', String(slideshowPaused));
+    pauseSlide.title = slideshowPaused ? 'Lanjutkan slideshow' : 'Jeda slideshow';
+  }
+  if(slideshowPaused) clearAutoSlide();
+  else restartAutoSlide();
+}
+
+pauseSlide?.addEventListener('click', () => setSlideshowPaused(!slideshowPaused));
+
+nextSlide.addEventListener('click', () => current === slides.length - 1 ? openForm() : goTo(current + 1));
 prevSlide.addEventListener('click',() => goTo(current - 1));
 progressItems.forEach((item,index) => item.addEventListener('click',() => goTo(index)));
 skipOpening.addEventListener('click',openForm);
@@ -142,6 +161,7 @@ storyViewport.addEventListener('wheel',restartAutoSlide,{passive:true});
 document.addEventListener('keydown',(event) => {
   if(lightbox.classList.contains('is-open')) return;
   if(!openingScreen.classList.contains('is-visible')) return;
+  if(event.key.toLowerCase() === 'p') setSlideshowPaused(!slideshowPaused);
   if(event.key === 'ArrowRight') current === slides.length - 1 ? openForm() : goTo(current + 1);
   if(event.key === 'ArrowLeft' && current > 0) goTo(current - 1);
 });
